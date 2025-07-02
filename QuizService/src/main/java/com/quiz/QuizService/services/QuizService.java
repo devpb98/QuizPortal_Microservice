@@ -12,4 +12,6 @@ public interface QuizService {
     List<Quiz> get();
 
     Quiz get(Long id);
+
+
 }
