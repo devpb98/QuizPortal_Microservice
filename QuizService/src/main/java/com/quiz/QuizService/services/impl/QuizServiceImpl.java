@@ -1,5 +1,6 @@
 package com.quiz.QuizService.services.impl;
 
+import com.quiz.QuizService.entities.Question;
 import com.quiz.QuizService.entities.Quiz;
 import com.quiz.QuizService.repositories.QuizRepository;
 import com.quiz.QuizService.services.QuestionClient;
@@ -42,5 +43,10 @@ public class QuizServiceImpl implements QuizService {
     @Override
     public Quiz get(Long id) {
         return quizRepository.findById(id).orElseThrow(() -> new RuntimeException("Quiz not found with id: " + id));
+    }
+
+    @Override
+    public List<Question> getQuestionsByQuizId(Long id) {
+        return questionClient.getQuestionByQuizId(id);
     }
 }
